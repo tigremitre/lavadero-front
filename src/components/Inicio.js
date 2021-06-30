@@ -1,10 +1,9 @@
 import React from 'react';
+import Navegacion from './common/Navegacion';
 
 const Inicio = () => {
     return (
-        <div>
-            <h1>Pagina Principal jee</h1>
-        </div>
+        <Navegacion></Navegacion>
     );
 };
 
