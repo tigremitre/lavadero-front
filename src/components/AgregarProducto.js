@@ -1,10 +1,13 @@
 import React from 'react';
+import { Fragment } from 'react';
+import Navegacion from './common/Navegacion';
 
 const AgregarProducto = () => {
     return (
-        <div>
-            <h1>Pagina agregar productos jeeeeeeejereje</h1>
-        </div>
+        <Fragment>
+            <Navegacion></Navegacion>
+            
+        </Fragment>
     );
 };
 

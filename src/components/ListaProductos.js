@@ -1,10 +1,14 @@
 import React from 'react';
+import { Fragment } from 'react';
+import Footer from './common/Footer';
+import Navegacion from './common/Navegacion';
 
 const ListaProductos = () => {
     return (
-        <div>
-            <h1>Pagina lista de productos jeee</h1>
-        </div>
+        <Fragment>
+            <Navegacion></Navegacion>
+            <Footer></Footer>
+        </Fragment>
     );
 };
 
