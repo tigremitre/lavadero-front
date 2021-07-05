@@ -1,9 +1,15 @@
 
 import React from 'react';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 
 const AgregarProducto = () => {
+
+    const [nombreProducto, setNombreProducto] = useState('');
+    const [precioProducto, setPrecioProducto] = useState('');
+    const [categoria, setCategoria] = useState('');
+
+
     return (
         <Fragment>
           <Container className='my-4'>
@@ -11,7 +17,7 @@ const AgregarProducto = () => {
                   <h1 className='my-4 text-center'>Agregar Servico</h1>
                   <Form.Group>
                       <Form.Label>Nombre del Servicio</Form.Label>
-                      <Form.Control type='text' placeholder='Lavado'></Form.Control>
+                      <Form.Control type='text' placeholder='Lavado' onChange={(e)=> setNombreProducto(e.target.value)}></Form.Control>
                   </Form.Group>
                   <Form.Group>
                       <Form.Label>Precio</Form.Label>
