@@ -31,24 +31,32 @@ const AgregarProducto = () => {
               type="radio"
               label="Premium"
               name="categoria"
+              value='premium'
+              onChange={(e)=> setCategoria(e.target.value)}
             ></Form.Check>
             <Form.Check
               inline
               type="radio"
               label="Completo"
               name="categoria"
+              value='completo'
+              onChange={(e)=> setCategoria(e.target.value)}
             ></Form.Check>
             <Form.Check
               inline
               type="radio"
               label="Chasis y Carroceria"
               name="categoria"
+              value='chasisCarroceria'
+              onChange={(e)=> setCategoria(e.target.value)}
             ></Form.Check>
             <Form.Check
               inline
               type="radio"
               label="Carroceria"
               name="categoria"
+              value='carroceria'
+              onChange={(e)=> setCategoria(e.target.value)}
             ></Form.Check>
           </div>
           <Button variant="danger w-100">Agregar</Button>
