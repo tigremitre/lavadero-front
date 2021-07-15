@@ -1,29 +1,34 @@
 {
-    "lavadero":[
-        {
-            "nombreProducto":"premium",
-            "precioProducto":"2500",
-            "categoria":"lavado-premium",
-            "id": 1
-        },
-        {
-            "nombreProducto":"completo",
-            "precioProducto":"1500",
-            "categoria":"lavado-completo",
-            "id": 2
-        },
-        {
-            "nombreProducto":"chasisCarroceria",
-            "precioProducto":"1200",
-            "categoria":"lavado-chasisCarroceria",
-            "id": 3
-        },
-        {
-            "nombreProducto":"carroceria",
-            "precioProducto":"900",
-            "categoria":"lavado-carroceria",
-            "id": 4
-        }
-
-    ]
+  "lavadero": [
+    {
+      "nombreProducto": "premium",
+      "precioProducto": "2500",
+      "categoria": "lavado-premium",
+      "id": 1
+    },
+    {
+      "nombreProducto": "completo",
+      "precioProducto": "1500",
+      "categoria": "lavado-completo",
+      "id": 2
+    },
+    {
+      "nombreProducto": "chasisCarroceria",
+      "precioProducto": "1200",
+      "categoria": "lavado-chasisCarroceria",
+      "id": 3
+    },
+    {
+      "nombreProducto": "carroceria",
+      "precioProducto": "900",
+      "categoria": "lavado-carroceria",
+      "id": 4
+    },
+    {
+      "nombreProducto": "lavado ",
+      "precioProducto": "345",
+      "categoria": "completo",
+      "id": 5
+    }
+  ]
 }

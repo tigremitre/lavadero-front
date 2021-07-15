@@ -3,6 +3,8 @@ import { Fragment, useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 
 const AgregarProducto = () => {
+  const URL = process.env.REACT_APP_API_URL;
+  console.log(URL);
   const [nombreProducto, setNombreProducto] = useState("");
   const [precioProducto, setPrecioProducto] = useState("");
   const [categoria, setCategoria] = useState("");
@@ -12,7 +14,7 @@ const AgregarProducto = () => {
     setCategoria(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     // validar datos
     if (
@@ -27,6 +29,36 @@ const AgregarProducto = () => {
       //enviar el servicio a la api
       console.log("Formulario completado correctamente");
       setError(false);
+
+      // crear el objeto a enviar
+
+      const datos ={
+        nombreProducto: nombreProducto,
+        precioProducto: precioProducto,
+        categoria: categoria
+      };
+      console.log(datos);
+
+      //enviar objetos a la api, operacion POST
+
+      try{
+        const parametros ={
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json" 
+          },
+          body: JSON.stringify(datos)
+        };  
+
+        // Ejecutar la solicitud o request
+
+        const respuesta = await fetch('http://localhost:3004/lavadero', parametros)
+        console.log(respuesta);
+
+      }catch(error){
+        console.log(error)
+      }
+
     }
   };
 
@@ -87,7 +119,7 @@ const AgregarProducto = () => {
               onChange={cambiarCategoria}
             ></Form.Check>
           </div>
-          <Button variant="danger w-100">Agregar</Button>
+          <Button variant="danger w-100" type="submit">Agregar</Button>
         </Form>
       </Container>
     </Fragment>
