@@ -1,6 +1,7 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
+import Swal from 'sweetalert2';
 
 const AgregarProducto = () => {
   const URL = process.env.REACT_APP_API_URL;
@@ -14,7 +15,7 @@ const AgregarProducto = () => {
     setCategoria(e.target.value);
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // validar datos
     if (
@@ -32,33 +33,41 @@ const AgregarProducto = () => {
 
       // crear el objeto a enviar
 
-      const datos ={
+      const datos = {
         nombreProducto: nombreProducto,
         precioProducto: precioProducto,
-        categoria: categoria
+        categoria: categoria,
       };
       console.log(datos);
 
       //enviar objetos a la api, operacion POST
 
-      try{
-        const parametros ={
-          method:"POST",
-          headers:{
-            "Content-Type":"application/json" 
+      try {
+        const parametros = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(datos)
-        };  
+          body: JSON.stringify(datos),
+        };
 
         // Ejecutar la solicitud o request
 
-        const respuesta = await fetch('http://localhost:3004/lavadero', parametros)
+        const respuesta = await fetch(URL, parametros);
         console.log(respuesta);
+        if((await respuesta.status) === 201 ){
+          // mostrar un cartel al usuario
+          Swal.fire(
+            'Producto agregado Nasheeee',
+            'Mujeres confirmadas',
+            'success'
+          )
+          //limpiar el formulario 
+        }
 
-      }catch(error){
-        console.log(error)
+      } catch (error) {
+        console.log(error);
       }
-
     }
   };
 
@@ -68,7 +77,12 @@ const AgregarProducto = () => {
         <Form onSubmit={handleSubmit}>
           <h1 className="my-4 text-center">Agregar Servico</h1>
           <Form.Group>
-            { (error === true)? (<Alert variant={"danger"}>Hay un error en el formulario, revise antes de reenviar por favor</Alert>): null}
+            {error === true ? (
+              <Alert variant={"danger"}>
+                Hay un error en el formulario, revise antes de reenviar por
+                favor
+              </Alert>
+            ) : null}
             <Form.Label>Nombre del Servicio*</Form.Label>
             <Form.Control
               type="text"
@@ -119,7 +133,9 @@ const AgregarProducto = () => {
               onChange={cambiarCategoria}
             ></Form.Check>
           </div>
-          <Button variant="danger w-100" type="submit">Agregar</Button>
+          <Button variant="danger w-100" type="submit">
+            Agregar
+          </Button>
         </Form>
       </Container>
     </Fragment>

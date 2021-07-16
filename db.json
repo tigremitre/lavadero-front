@@ -29,6 +29,42 @@
       "precioProducto": "345",
       "categoria": "completo",
       "id": 5
+    },
+    {
+      "nombreProducto": "LAVADO ",
+      "precioProducto": "345",
+      "categoria": "premium",
+      "id": 6
+    },
+    {
+      "nombreProducto": "lavado ndeaa",
+      "precioProducto": "3544",
+      "categoria": "carroceria",
+      "id": 7
+    },
+    {
+      "nombreProducto": "lavado ndeaa",
+      "precioProducto": "3544",
+      "categoria": "carroceria",
+      "id": 8
+    },
+    {
+      "nombreProducto": "previa manija viernes ",
+      "precioProducto": "1000",
+      "categoria": "carroceria",
+      "id": 9
+    },
+    {
+      "nombreProducto": "previa manija viernes ",
+      "precioProducto": "1000",
+      "categoria": "premium",
+      "id": 10
+    },
+    {
+      "nombreProducto": "previa manija viernes ",
+      "precioProducto": "1000",
+      "categoria": "premium",
+      "id": 11
     }
   ]
 }
