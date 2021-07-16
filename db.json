@@ -65,6 +65,24 @@
       "precioProducto": "1000",
       "categoria": "premium",
       "id": 11
+    },
+    {
+      "nombreProducto": "lavadi",
+      "precioProducto": "4555",
+      "categoria": "completo",
+      "id": 12
+    },
+    {
+      "nombreProducto": "dsfgsdg",
+      "precioProducto": "2345",
+      "categoria": "chasisCarroceria",
+      "id": 13
+    },
+    {
+      "nombreProducto": "lavado ndea",
+      "precioProducto": "342",
+      "categoria": "completo",
+      "id": 14
     }
   ]
 }

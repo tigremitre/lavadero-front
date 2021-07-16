@@ -58,11 +58,15 @@ const AgregarProducto = () => {
         if((await respuesta.status) === 201 ){
           // mostrar un cartel al usuario
           Swal.fire(
-            'Producto agregado Nasheeee',
+            'Producto agregado Anasheeee',
             'Mujeres confirmadas',
             'success'
           )
           //limpiar el formulario 
+          setNombreProducto(''); setPrecioProducto(''); setCategoria('')
+
+
+          //redireccionar a otra ruta 
         }
 
       } catch (error) {
@@ -88,6 +92,7 @@ const AgregarProducto = () => {
               type="text"
               placeholder="Lavado"
               onChange={(e) => setNombreProducto(e.target.value)}
+              value={nombreProducto}
             ></Form.Control>
           </Form.Group>
           <Form.Group>
@@ -96,6 +101,7 @@ const AgregarProducto = () => {
               type="number"
               placeholder="$1800"
               onChange={(e) => setPrecioProducto(e.target.value)}
+              value={precioProducto}
             ></Form.Control>
           </Form.Group>
           <div className="text-center my-4">
