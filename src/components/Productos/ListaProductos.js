@@ -1,12 +1,9 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 const ListaProductos = () => {
-    return (
-        <Fragment>
-           
-        </Fragment>
-    );
+  return <Fragment>
+      
+  </Fragment>;
 };
 
 export default ListaProductos;
