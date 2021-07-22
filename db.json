@@ -83,6 +83,24 @@
       "precioProducto": "342",
       "categoria": "completo",
       "id": 14
+    },
+    {
+      "nombreProducto": "lavade",
+      "precioProducto": "45666",
+      "categoria": "premium",
+      "id": 15
+    },
+    {
+      "nombreProducto": "lavadeee",
+      "precioProducto": "354",
+      "categoria": "completo",
+      "id": 16
+    },
+    {
+      "nombreProducto": "lavadeee",
+      "precioProducto": "4555",
+      "categoria": "chasisCarroceria",
+      "id": 17
     }
   ]
 }
