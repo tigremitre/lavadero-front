@@ -3,6 +3,7 @@ import { ListGroup, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faPen } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ItemProducto = (props) => {
   // El nombre de ka variable en la funcion anonima no tiene que llamarse id si o si, no hace falta que sea igual pero lo uso asi xq lo reprecenta
@@ -61,9 +62,9 @@ const ItemProducto = (props) => {
         {props.producto.nombreProducto} <b> ${props.producto.precioProducto}</b>
       </p>
       <div>
-        <Button variant="warning mr-3 text-light">
+        <Link to='/productos/editar' className='btn btn-warning mr-3 text-light'>
           Editar <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>
-        </Button>
+        </Link>
         <Button
           variant="danger"
           onClick={() => eliminarProducto(props.producto.id)}
