@@ -101,6 +101,18 @@
       "precioProducto": "4555",
       "categoria": "chasisCarroceria",
       "id": 17
+    },
+    {
+      "nombreProducto": "lavado anasheee",
+      "precioProducto": "2500",
+      "categoria": "premium",
+      "id": 18
+    },
+    {
+      "nombreProducto": "lavadukiiiiiiiiiiiiiii",
+      "precioProducto": "1800",
+      "categoria": "completo",
+      "id": 19
     }
   ]
 }

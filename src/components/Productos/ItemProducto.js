@@ -3,11 +3,11 @@ import { ListGroup, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faPen } from "@fortawesome/free-solid-svg-icons";
 
-const ItemProducto = () => {
+const ItemProducto = (props) => {
   return (
     <ListGroup.Item className="d-flex justify-content-between">
       <p>
-        Lavado Express <b>$700</b>
+        {props.producto.nombreProducto} <b> ${props.producto.precioProducto}</b>
       </p>
       <div>
         <Button variant="warning mr-3 text-light">Editar <FontAwesomeIcon icon={faPen}></FontAwesomeIcon></Button>
