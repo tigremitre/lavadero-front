@@ -2,8 +2,9 @@ import React from "react";
 import { Fragment, useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import { withRouter } from "react-router-dom";
 
-const AgregarProducto = () => {
+const AgregarProducto = (props) => {
   const URL = process.env.REACT_APP_API_URL;
   const [nombreProducto, setNombreProducto] = useState("");
   const [precioProducto, setPrecioProducto] = useState("");
@@ -66,6 +67,7 @@ const AgregarProducto = () => {
 
 
           //redireccionar a otra ruta 
+          props.history.push('/productos')
         }
 
       } catch (error) {
@@ -147,4 +149,4 @@ const AgregarProducto = () => {
   );
 };
 
-export default AgregarProducto;
+export default withRouter(AgregarProducto);

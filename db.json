@@ -113,6 +113,12 @@
       "precioProducto": "1800",
       "categoria": "completo",
       "id": 19
+    },
+    {
+      "nombreProducto": "lavade ",
+      "precioProducto": "17888",
+      "categoria": "completo",
+      "id": 20
     }
   ]
 }
