@@ -25,18 +25,6 @@
       "id": 4
     },
     {
-      "nombreProducto": "lavado ",
-      "precioProducto": "345",
-      "categoria": "completo",
-      "id": 5
-    },
-    {
-      "nombreProducto": "LAVADO ",
-      "precioProducto": "345",
-      "categoria": "premium",
-      "id": 6
-    },
-    {
       "nombreProducto": "lavado ndeaa",
       "precioProducto": "3544",
       "categoria": "carroceria",
@@ -73,12 +61,6 @@
       "id": 12
     },
     {
-      "nombreProducto": "dsfgsdg",
-      "precioProducto": "2345",
-      "categoria": "chasisCarroceria",
-      "id": 13
-    },
-    {
       "nombreProducto": "lavado ndea",
       "precioProducto": "342",
       "categoria": "completo",
@@ -97,28 +79,16 @@
       "id": 16
     },
     {
-      "nombreProducto": "lavadeee",
-      "precioProducto": "4555",
-      "categoria": "chasisCarroceria",
-      "id": 17
-    },
-    {
       "nombreProducto": "lavado anasheee",
       "precioProducto": "2500",
       "categoria": "premium",
       "id": 18
     },
     {
-      "nombreProducto": "lavadukiiiiiiiiiiiiiii",
-      "precioProducto": "1800",
-      "categoria": "completo",
-      "id": 19
-    },
-    {
-      "nombreProducto": "lavade ",
-      "precioProducto": "17888",
-      "categoria": "completo",
-      "id": 20
+      "nombreProducto": "Cambio de aceite y filtro",
+      "precioProducto": "3500",
+      "categoria": "premium",
+      "id": 21
     }
   ]
 }
