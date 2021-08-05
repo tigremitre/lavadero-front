@@ -48,10 +48,11 @@ const ItemProducto = (props) => {
         } catch (error) {
           console.log(error);
           Swal.fire(
-            'Se produjo un error',
-            'Intentelo en unos minutos',
-            'error'
-          )}
+            "Se produjo un error",
+            "Intentelo en unos minutos",
+            "error"
+          );
+        }
       }
     });
   };
@@ -62,7 +63,10 @@ const ItemProducto = (props) => {
         {props.producto.nombreProducto} <b> ${props.producto.precioProducto}</b>
       </p>
       <div>
-        <Link to='/productos/editar' className='btn btn-warning mr-3 text-light'>
+        <Link
+          to={`/productos/editar/${props.producto.id}`}
+          className="btn btn-warning mr-3 text-light"
+        >
           Editar <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>
         </Link>
         <Button
