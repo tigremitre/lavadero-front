@@ -19,12 +19,6 @@
       "id": 3
     },
     {
-      "nombreProducto": "carroceria",
-      "precioProducto": "900",
-      "categoria": "lavado-carroceria",
-      "id": 4
-    },
-    {
       "nombreProducto": "lavado ndeaa",
       "precioProducto": "3544",
       "categoria": "carroceria",
@@ -65,6 +59,12 @@
       "precioProducto": "3500",
       "categoria": "premium",
       "id": 21
+    },
+    {
+      "nombreProducto": "cambios",
+      "precioProducto": "2500",
+      "categoria": "carroceria",
+      "id": 22
     }
   ]
 }
