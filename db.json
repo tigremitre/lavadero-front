@@ -7,9 +7,9 @@
       "id": 1
     },
     {
-      "nombreProducto": "completo",
-      "precioProducto": "1500",
-      "categoria": "lavado-completo",
+      "nombreProducto": "completo x3",
+      "precioProducto": "4000",
+      "categoria": "premium",
       "id": 2
     },
     {
@@ -65,6 +65,12 @@
       "precioProducto": "2500",
       "categoria": "carroceria",
       "id": 22
+    },
+    {
+      "nombreProducto": "alfajores x 5",
+      "precioProducto": "1799",
+      "categoria": "completo",
+      "id": 23
     }
   ]
 }

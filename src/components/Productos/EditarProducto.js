@@ -1,15 +1,20 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment, useEffect, useRef } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { campoRequerido, rangoValor } from "../helpers/validaciones";
 
 const EditarProducto = () => {
   //obtengo el parametro de la url
-
+  
   const { id } = useParams();
   const URL = process.env.REACT_APP_API_URL;
-
+  
   //declaro los state
   const [producto, setProducto] = useState({});
+  const [categoria, setCategoria] = useState("");
+  //crear useRef
+  const nombreProductoRef = useRef('');
+  const precioProductoRef = useRef(0);
 
   //traer los datos del objeto editar
   useEffect(() => {
@@ -29,24 +34,60 @@ const EditarProducto = () => {
     }
   };
 
-  const [categoria, setCategoria] = useState("");
 
   const cambiarCategoria = (e) => {
     setCategoria(e.target.value);
   };
 
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+
+    const categoriaSeleccionada = (categoria === '')? producto.categoria : categoria;
+    //validar datos
+    if(campoRequerido(nombreProductoRef.current.value) && rangoValor(parseInt(precioProductoRef.current.value)) && campoRequerido(categoriaSeleccionada)){
+
+      //armar el objeto a enviar
+
+      const productoEditado ={
+        nombreProducto: nombreProductoRef.current.value,
+        precioProducto: precioProductoRef.current.value,
+        categoria: categoriaSeleccionada
+      }
+
+      console.log(productoEditado);
+
+      try{
+        const respuesta = await fetch(URL+"/"+id,{
+          method: "PUT",
+          headers:{
+            "Content-Type": "application/json"
+          },
+          body:JSON.stringify(productoEditado)
+        });
+        console.log(respuesta);
+
+      }catch(error){
+        //mostrar al usuario el error ocurrido
+      }
+
+    }else{
+      console.log('mostrar cartel de error');
+    }
+
+  }
+
   return (
     <Fragment>
       <Container className="my-4">
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <h1 className="my-4 text-center">Editar Servico</h1>
           <Form.Group>
             <Form.Label>Nombre del Servicio*</Form.Label>
-            <Form.Control type="text" placeholder="Lavado" defaultValue={producto.nombreProducto}></Form.Control>
+            <Form.Control type="text" placeholder="Lavado" defaultValue={producto.nombreProducto} ref={nombreProductoRef}></Form.Control>
           </Form.Group>
           <Form.Group>
             <Form.Label>Precio*</Form.Label>
-            <Form.Control type="number" placeholder="$1800" defaultValue={producto.precioProducto}></Form.Control>
+            <Form.Control type="number" placeholder="$1800" defaultValue={producto.precioProducto} ref={precioProductoRef}></Form.Control>
           </Form.Group>
           <div className="text-center my-4">
             <h3>Categoria*</h3>
