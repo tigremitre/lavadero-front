@@ -1,9 +1,9 @@
 {
   "lavadero": [
     {
-      "nombreProducto": "premium",
-      "precioProducto": "2500",
-      "categoria": "lavado-premium",
+      "nombreProducto": "premiumes",
+      "precioProducto": "3456",
+      "categoria": "premium",
       "id": 1
     },
     {
@@ -71,6 +71,12 @@
       "precioProducto": "1799",
       "categoria": "completo",
       "id": 23
+    },
+    {
+      "nombreProducto": "zfdbsdfb",
+      "precioProducto": "3423",
+      "categoria": "premium",
+      "id": 24
     }
   ]
 }

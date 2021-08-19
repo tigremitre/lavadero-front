@@ -1,9 +1,10 @@
 import React, { useState, Fragment, useEffect, useRef } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, withRouter } from "react-router-dom";
 import { campoRequerido, rangoValor } from "../helpers/validaciones";
+import Swal from "sweetalert2";
 
-const EditarProducto = () => {
+const EditarProducto = (props) => {
   //obtengo el parametro de la url
   
   const { id } = useParams();
@@ -65,6 +66,16 @@ const EditarProducto = () => {
           body:JSON.stringify(productoEditado)
         });
         console.log(respuesta);
+        if(respuesta.status === 200){
+          Swal.fire(
+            'Producto Editado Anasheeeeeex',
+            'Se modificaron los datos del producto',
+            'success'
+          );
+          props.consultarAPI();
+          //redireccionar a la pagina de productos
+          props.history.push('/productos');
+        }
 
       }catch(error){
         //mostrar al usuario el error ocurrido
@@ -137,4 +148,4 @@ const EditarProducto = () => {
   );
 };
 
-export default EditarProducto;
+export default withRouter(EditarProducto);
