@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useEffect, useRef } from "react";
-import { Container, Form, Button, Alert } from "react-bootstrap";
+import { Container, Form, Button} from "react-bootstrap";
 import { useParams, withRouter } from "react-router-dom";
 import { campoRequerido, rangoValor } from "../helpers/validaciones";
 import Swal from "sweetalert2";
