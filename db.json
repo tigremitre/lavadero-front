@@ -1,36 +1,6 @@
 {
   "lavadero": [
     {
-      "nombreProducto": "premiumes",
-      "precioProducto": "3456",
-      "categoria": "premium",
-      "id": 1
-    },
-    {
-      "nombreProducto": "completo x3",
-      "precioProducto": "4000",
-      "categoria": "premium",
-      "id": 2
-    },
-    {
-      "nombreProducto": "chasisCarroceria",
-      "precioProducto": "1200",
-      "categoria": "lavado-chasisCarroceria",
-      "id": 3
-    },
-    {
-      "nombreProducto": "lavado ndeaa",
-      "precioProducto": "3544",
-      "categoria": "carroceria",
-      "id": 7
-    },
-    {
-      "nombreProducto": "lavado ndeaa",
-      "precioProducto": "3544",
-      "categoria": "carroceria",
-      "id": 8
-    },
-    {
       "nombreProducto": "previa manija viernes ",
       "precioProducto": "1000",
       "categoria": "carroceria",
@@ -77,6 +47,18 @@
       "precioProducto": "3423",
       "categoria": "premium",
       "id": 24
+    },
+    {
+      "nombreProducto": "lavade",
+      "precioProducto": "2700",
+      "categoria": "completo",
+      "id": 25
+    },
+    {
+      "nombreProducto": "iara",
+      "precioProducto": "550",
+      "categoria": "completo",
+      "id": 26
     }
   ]
 }

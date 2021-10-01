@@ -1,7 +1,7 @@
 import React from "react";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
 const AgregarProducto = (props) => {
@@ -55,22 +55,23 @@ const AgregarProducto = (props) => {
 
         const respuesta = await fetch(URL, parametros);
         console.log(respuesta);
-        if((await respuesta.status) === 201 ){
+        if ((await respuesta.status) === 201) {
           // mostrar un cartel al usuario
           Swal.fire(
-            'Producto agregado Anasheeee',
-            'Mujeres confirmadas',
-            'success'
-          )
-          //limpiar el formulario 
-          setNombreProducto(''); setPrecioProducto(''); setCategoria('')
+            "Producto agregado Anasheeee",
+            "Mujeres confirmadas",
+            "success"
+          );
+          //limpiar el formulario
+          setNombreProducto("");
+          setPrecioProducto("");
+          setCategoria("");
 
-            //recargar los productos
-            props.consultarAPI(); 
-          //redireccionar a otra ruta 
-          props.history.push('/productos')
+          //recargar los productos
+          props.consultarAPI();
+          //redireccionar a otra ruta
+          props.history.push("/productos");
         }
-
       } catch (error) {
         console.log(error);
       }
@@ -78,75 +79,72 @@ const AgregarProducto = (props) => {
   };
 
   return (
-    <Fragment>
-      <Container className="my-4">
-        <Form onSubmit={handleSubmit}>
-          <h1 className="my-4 text-center">Agregar Servico</h1>
-          <Form.Group>
-            {error === true ? (
-              <Alert variant={"danger"}>
-                Hay un error en el formulario, revise antes de reenviar por
-                favor
-              </Alert>
-            ) : null}
-            <Form.Label>Nombre del Servicio*</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Lavado"
-              onChange={(e) => setNombreProducto(e.target.value)}
-              value={nombreProducto}
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Precio*</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="$1800"
-              onChange={(e) => setPrecioProducto(e.target.value)}
-              value={precioProducto}
-            ></Form.Control>
-          </Form.Group>
-          <div className="text-center my-4">
-            <h3>Categoria*</h3>
-            <Form.Check
-              inline
-              type="radio"
-              label="Premium"
-              name="categoria"
-              value="premium"
-              onChange={cambiarCategoria}
-            ></Form.Check>
-            <Form.Check
-              inline
-              type="radio"
-              label="Completo"
-              name="categoria"
-              value="completo"
-              onChange={cambiarCategoria}
-            ></Form.Check>
-            <Form.Check
-              inline
-              type="radio"
-              label="Chasis y Carroceria"
-              name="categoria"
-              value="chasisCarroceria"
-              onChange={cambiarCategoria}
-            ></Form.Check>
-            <Form.Check
-              inline
-              type="radio"
-              label="Carroceria"
-              name="categoria"
-              value="carroceria"
-              onChange={cambiarCategoria}
-            ></Form.Check>
-          </div>
-          <Button variant="danger w-100" type="submit">
-            Agregar
-          </Button>
-        </Form>
-      </Container>
-    </Fragment>
+    <Container className="bodyservicios">
+      <Form onSubmit={handleSubmit}>
+        <h1 className="my-4 text-center">Agregar Servico</h1>
+        <Form.Group>
+          {error === true ? (
+            <Alert variant={"danger"}>
+              Hay un error en el formulario, revise antes de reenviar por favor
+            </Alert>
+          ) : null}
+          <Form.Label>Nombre del Servicio*</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Lavado"
+            onChange={(e) => setNombreProducto(e.target.value)}
+            value={nombreProducto}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Precio*</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="$1800"
+            onChange={(e) => setPrecioProducto(e.target.value)}
+            value={precioProducto}
+          ></Form.Control>
+        </Form.Group>
+        <div className="text-center my-4">
+          <h3>Categoria*</h3>
+          <Form.Check
+            inline
+            type="radio"
+            label="Premium"
+            name="categoria"
+            value="premium"
+            onChange={cambiarCategoria}
+          ></Form.Check>
+          <Form.Check
+            inline
+            type="radio"
+            label="Completo"
+            name="categoria"
+            value="completo"
+            onChange={cambiarCategoria}
+          ></Form.Check>
+          <Form.Check
+            inline
+            type="radio"
+            label="Chasis y Carroceria"
+            name="categoria"
+            value="chasisCarroceria"
+            onChange={cambiarCategoria}
+          ></Form.Check>
+          <Form.Check
+            inline
+            type="radio"
+            label="Carroceria"
+            name="categoria"
+            value="carroceria"
+            onChange={cambiarCategoria}
+          ></Form.Check>
+        </div>
+        <Button variant="dark w-100" type="submit">
+          Agregar
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

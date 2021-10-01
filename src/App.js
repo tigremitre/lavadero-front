@@ -45,7 +45,7 @@ function App() {
         <Route exact path='/productos/editar/:id'>
           <EditarProducto consultarAPI={consultarAPI}></EditarProducto>
         </Route>
-        <Route exact path='*'>
+        <Route exact path='/404'>
           <Error404></Error404>
         </Route>
       </Switch>

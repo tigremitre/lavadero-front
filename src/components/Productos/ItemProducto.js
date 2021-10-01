@@ -33,7 +33,7 @@ const ItemProducto = (props) => {
 
           if (response.status === 200) {
             // mostrar el cartel de eliminado
-            Swal.fire("Full clean ahora", "Producto eliminado", "success");
+            Swal.fire("Full clean", "Producto eliminado", "success");
             // Actualizar los datos
             props.consultarAPI();
           } else {
