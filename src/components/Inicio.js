@@ -1,15 +1,13 @@
-import React from 'react';
-import { Fragment } from 'react';
-import Carwash2 from '../img/carwash2.jpg'
+import React from "react";
+import { Fragment } from "react";
+import Carrusel2 from "./common/Carrusel2";
 
-const Inicio = () => {
-    return (
-        <Fragment>
-       
-        <img src={Carwash2} alt="imagen lavadero" className='w-100'/>
-     
-        </Fragment>
-    );
-};
+function Inicio() {
+  return (
+    <Fragment>
+      <Carrusel2 />
+    </Fragment>
+  );
+}
 
 export default Inicio;

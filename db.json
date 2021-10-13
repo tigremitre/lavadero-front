@@ -1,64 +1,10 @@
 {
   "lavadero": [
     {
-      "nombreProducto": "previa manija viernes ",
-      "precioProducto": "1000",
-      "categoria": "carroceria",
-      "id": 9
-    },
-    {
-      "nombreProducto": "previa manija viernes ",
-      "precioProducto": "1000",
-      "categoria": "premium",
-      "id": 10
-    },
-    {
-      "nombreProducto": "previa manija viernes ",
-      "precioProducto": "1000",
-      "categoria": "premium",
-      "id": 11
-    },
-    {
-      "nombreProducto": "lavado anasheee",
-      "precioProducto": "2500",
-      "categoria": "premium",
-      "id": 18
-    },
-    {
-      "nombreProducto": "Cambio de aceite y filtro",
+      "nombreProducto": "lavado de tapizado",
       "precioProducto": "3500",
-      "categoria": "premium",
-      "id": 21
-    },
-    {
-      "nombreProducto": "cambios",
-      "precioProducto": "2500",
-      "categoria": "carroceria",
-      "id": 22
-    },
-    {
-      "nombreProducto": "alfajores x 5",
-      "precioProducto": "1799",
       "categoria": "completo",
-      "id": 23
-    },
-    {
-      "nombreProducto": "zfdbsdfb",
-      "precioProducto": "3423",
-      "categoria": "premium",
-      "id": 24
-    },
-    {
-      "nombreProducto": "lavade",
-      "precioProducto": "2700",
-      "categoria": "completo",
-      "id": 25
-    },
-    {
-      "nombreProducto": "iara",
-      "precioProducto": "550",
-      "categoria": "completo",
-      "id": 26
+      "id": 1
     }
   ]
 }

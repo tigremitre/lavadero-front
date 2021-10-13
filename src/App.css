@@ -4,4 +4,38 @@
 
 .bodyservicios {
     min-height: 80vh;
+    
+}
+.bodylista {
+    min-height: 71vh;
+    
+}
+.bodycontacto {
+    min-height: 77vh;
+    
+}
+
+.prueba{
+    width: 100%;
+    height: 85vh;
+}
+
+.tipografia{
+    font-size: 85px;
+    color: floralwhite;
+    text-decoration: none;
+
+}
+
+.tipografia:hover{
+    color:lightblue
+}
+
+.footers{
+    text-decoration: none;
+    color: floralwhite;
+}
+
+.footers:hover{
+    color:lightblue
 }

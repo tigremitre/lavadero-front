@@ -9,6 +9,7 @@ import Navegacion from "./components/common/Navegacion";
 import { useState, useEffect } from "react";
 import EditarProducto from "./components/Productos/EditarProducto";
 import Error404 from "./components/Error404";
+import Formulario from "./components/common/Formulario";
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route exact path="/productos">
           <ListaProductos productos={productos} consultarAPI={consultarAPI}></ListaProductos>
+        </Route>
+        <Route exact path="/contacto">
+          <Formulario></Formulario>
         </Route>
         <Route exact path="/productos/nuevo">
           <AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>
