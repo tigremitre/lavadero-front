@@ -17,21 +17,20 @@ const AgregarProducto = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // validar datos
+    
     if (
       nombreProducto.trim() === "" ||
       precioProducto.trim() === "" ||
       categoria === ""
     ) {
-      //mostrar un cartel de error;
-      setError(true);
+     
       return;
     } else {
-      //enviar el servicio a la api
+      
       console.log("Formulario completado correctamente");
       setError(false);
 
-      // crear el objeto a enviar
+      
 
       const datos = {
         nombreProducto: nombreProducto,
@@ -40,7 +39,7 @@ const AgregarProducto = (props) => {
       };
       console.log(datos);
 
-      //enviar objetos a la api, operacion POST
+      
 
       try {
         const parametros = {
@@ -51,25 +50,25 @@ const AgregarProducto = (props) => {
           body: JSON.stringify(datos),
         };
 
-        // Ejecutar la solicitud o request
+        
 
         const respuesta = await fetch(URL, parametros);
         console.log(respuesta);
         if ((await respuesta.status) === 201) {
-          // mostrar un cartel al usuario
+          
           Swal.fire(
-            "Producto agregado Anasheeee",
-            "Mujeres confirmadas",
+            "Producto agregado",
+            "Cargado correctamente",
             "success"
           );
-          //limpiar el formulario
+         
           setNombreProducto("");
           setPrecioProducto("");
           setCategoria("");
 
-          //recargar los productos
+         
           props.consultarAPI();
-          //redireccionar a otra ruta
+         
           props.history.push("/productos");
         }
       } catch (error) {

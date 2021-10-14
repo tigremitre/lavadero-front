@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import { Button } from "react-bootstrap";
 
 const Formulario = () => {
   return (
@@ -14,6 +15,8 @@ const Formulario = () => {
             <Form.Label>Sobre que servicio quiere consultar?</Form.Label>
             <Form.Control as="textarea" rows={3} />
           </Form.Group>
+          <Button variant="dark w-100" type="submit">Enviar
+        </Button>
         </Form>
       </div>
     </div>

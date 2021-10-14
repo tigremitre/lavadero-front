@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const ItemProducto = (props) => {
-  // El nombre de ka variable en la funcion anonima no tiene que llamarse id si o si, no hace falta que sea igual pero lo uso asi xq lo reprecenta
+ 
   const eliminarProducto = (id) => {
     const URL = process.env.REACT_APP_API_URL + "/" + id;
     console.log(URL);
@@ -22,7 +22,6 @@ const ItemProducto = (props) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        //agregar codigo para eliminar el producto de la api
         try {
           const response = await fetch(URL, {
             method: "DELETE",
@@ -32,9 +31,8 @@ const ItemProducto = (props) => {
           });
 
           if (response.status === 200) {
-            // mostrar el cartel de eliminado
             Swal.fire("Full clean", "Producto eliminado", "success");
-            // Actualizar los datos
+
             props.consultarAPI();
           } else {
             Swal.fire(
@@ -65,7 +63,7 @@ const ItemProducto = (props) => {
       <div>
         <Link
           to={`/productos/editar/${props.producto.id}`}
-          className="btn btn-warning mr-3 text-light"
+          className="btn btn-warning mr-2 text-light"
         >
           Editar <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>
         </Link>
