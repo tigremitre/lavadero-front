@@ -30,10 +30,10 @@ const Formulario = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(datos),
+          body: datos,
         };
-
-        const respuesta = await fetch(URL, parametros);
+        let url = 'mongodb://localhost:27017/lavadero'
+        const respuesta = await fetch(url, parametros);
         console.log(respuesta);
         if ((await respuesta.status) === 201) {
           Swal.fire("Consulta enviada", "Cargada correctamente", "success");
@@ -53,7 +53,7 @@ const Formulario = () => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="nombre@ejemplo.com" />
+            <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" placeholder="nombre@ejemplo.com" />
             {error === true ? (
               <Alert variant={"danger"}>
                 Hay un error en el formulario, revise antes de reenviar por
