@@ -17,58 +17,44 @@ const AgregarProducto = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (
       nombreProducto.trim() === "" ||
       precioProducto.trim() === "" ||
       categoria === ""
     ) {
-     
       return;
     } else {
-      
       console.log("Formulario completado correctamente");
       setError(false);
 
-      
+                const datos = {
+                  nombreProducto: nombreProducto,
+                  precioProducto: precioProducto,
+                  categoria: categoria,
+                };
+                console.log(datos);
 
-      const datos = {
-        nombreProducto: nombreProducto,
-        precioProducto: precioProducto,
-        categoria: categoria,
-      };
-      console.log(datos);
-
-      
-
-      try {
-        const parametros = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(datos),
-        };
-
-        
+                try {
+                  const parametros = {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(datos),
+                  };
 
         const respuesta = await fetch(URL, parametros);
         console.log(respuesta);
         if ((await respuesta.status) === 201) {
-          
-          Swal.fire(
-            "Producto agregado",
-            "Cargado correctamente",
-            "success"
-          );
-         
+          Swal.fire("Producto agregado", "Cargado correctamente", "success");
+
           setNombreProducto("");
           setPrecioProducto("");
           setCategoria("");
 
-         
           props.consultarAPI();
-         
+
           props.history.push("/productos");
         }
       } catch (error) {

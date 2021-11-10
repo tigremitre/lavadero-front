@@ -1,10 +1,22 @@
 {
   "lavadero": [
     {
-      "nombreProducto": "lavado de tapizado",
-      "precioProducto": "3500",
+      "nombreProducto": "javincha",
+      "precioProducto": "162",
+      "categoria": "premium",
+      "id": 2
+    },
+    {
+      "nombreProducto": "lVADO",
+      "precioProducto": "3000",
+      "categoria": "premium",
+      "id": 3
+    },
+    {
+      "nombreProducto": "lavadee",
+      "precioProducto": "1678",
       "categoria": "completo",
-      "id": 1
+      "id": 4
     }
   ]
 }

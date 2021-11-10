@@ -1,23 +1,19 @@
 import React, { useState, Fragment, useEffect, useRef } from "react";
-import { Container, Form, Button} from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import { useParams, withRouter } from "react-router-dom";
 import { campoRequerido, rangoValor } from "../helpers/validaciones";
 import Swal from "sweetalert2";
 
 const EditarProducto = (props) => {
-  //obtengo el parametro de la url
-  
   const { id } = useParams();
   const URL = process.env.REACT_APP_API_URL;
-  
-  //declaro los state
+
   const [producto, setProducto] = useState({});
   const [categoria, setCategoria] = useState("");
-  //crear useRef
-  const nombreProductoRef = useRef('');
+
+  const nombreProductoRef = useRef("");
   const precioProductoRef = useRef(0);
 
-  //traer los datos del objeto editar
   useEffect(() => {
     consultarProducto();
   }, []);
@@ -35,57 +31,64 @@ const EditarProducto = (props) => {
     }
   };
 
-
   const cambiarCategoria = (e) => {
     setCategoria(e.target.value);
   };
 
-  const handleSubmit = async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const categoriaSeleccionada = (categoria === '')? producto.categoria : categoria;
-    //validar datos
-    if(campoRequerido(nombreProductoRef.current.value) && rangoValor(parseInt(precioProductoRef.current.value)) && campoRequerido(categoriaSeleccionada)){
+    console.log("algo");
 
-      //armar el objeto a enviar
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: "lavadreo express", price: "3507" }),
+    };
+    fetch("https://reqres.in/api/posts", requestOptions);
+    // .then(response => response.json())
+    console.log("funciono bien");
 
-      const productoEditado ={
+    const categoriaSeleccionada =
+      categoria === "" ? producto.categoria : categoria;
+
+    if (
+      campoRequerido(nombreProductoRef.current.value) &&
+      rangoValor(parseInt(precioProductoRef.current.value)) &&
+      campoRequerido(categoriaSeleccionada)
+    ) {
+      const productoEditado = {
         nombreProducto: nombreProductoRef.current.value,
         precioProducto: precioProductoRef.current.value,
-        categoria: categoriaSeleccionada
-      }
+        categoria: categoriaSeleccionada,
+      };
 
       console.log(productoEditado);
 
-      try{
-        const respuesta = await fetch(URL+"/"+id,{
+      try {
+        const respuesta = await fetch(URL + "/" + id, {
           method: "PUT",
-          headers:{
-            "Content-Type": "application/json"
+          headers: {
+            "Content-Type": "application/json",
           },
-          body:JSON.stringify(productoEditado)
+          body: JSON.stringify(productoEditado),
         });
         console.log(respuesta);
-        if(respuesta.status === 200){
+        if (respuesta.status === 200) {
           Swal.fire(
-            'Producto Editado Anasheeeeeex',
-            'Se modificaron los datos del producto',
-            'success'
+            "Producto Editado Anasheeeeeex",
+            "Se modificaron los datos del producto",
+            "success"
           );
           props.consultarAPI();
-          //redireccionar a la pagina de productos
-          props.history.push('/productos');
+
+          props.history.push("/productos");
         }
-
-      }catch(error){
-        //mostrar al usuario el error ocurrido
-      }
-
-    }else{
-      console.log('mostrar cartel de error');
+      } catch (error) {}
+    } else {
+      console.log("mostrar cartel de error");
     }
-
-  }
+  };
 
   return (
     <Fragment>
@@ -94,11 +97,21 @@ const EditarProducto = (props) => {
           <h1 className="my-4 text-center">Editar Servico</h1>
           <Form.Group>
             <Form.Label>Nombre del Servicio*</Form.Label>
-            <Form.Control type="text" placeholder="Lavado" defaultValue={producto.nombreProducto} ref={nombreProductoRef}></Form.Control>
+            <Form.Control
+              type="text"
+              placeholder="Lavado"
+              defaultValue={producto.nombreProducto}
+              ref={nombreProductoRef}
+            ></Form.Control>
           </Form.Group>
           <Form.Group>
             <Form.Label>Precio*</Form.Label>
-            <Form.Control type="number" placeholder="$1800" defaultValue={producto.precioProducto} ref={precioProductoRef}></Form.Control>
+            <Form.Control
+              type="number"
+              placeholder="$1800"
+              defaultValue={producto.precioProducto}
+              ref={precioProductoRef}
+            ></Form.Control>
           </Form.Group>
           <div className="text-center my-4">
             <h3>Categoria*</h3>
@@ -109,7 +122,9 @@ const EditarProducto = (props) => {
               name="categoria"
               value="premium"
               onChange={cambiarCategoria}
-              defaultChecked={producto.categoria && producto.categoria === 'premium'}
+              defaultChecked={
+                producto.categoria && producto.categoria === "premium"
+              }
             ></Form.Check>
             <Form.Check
               inline
@@ -118,7 +133,9 @@ const EditarProducto = (props) => {
               name="categoria"
               value="completo"
               onChange={cambiarCategoria}
-              defaultChecked={producto.categoria && producto.categoria === 'completo'}
+              defaultChecked={
+                producto.categoria && producto.categoria === "completo"
+              }
             ></Form.Check>
             <Form.Check
               inline
@@ -127,7 +144,9 @@ const EditarProducto = (props) => {
               name="categoria"
               value="chasisCarroceria"
               onChange={cambiarCategoria}
-              defaultChecked={producto.categoria && producto.categoria === 'chasisCarroceria'}
+              defaultChecked={
+                producto.categoria && producto.categoria === "chasisCarroceria"
+              }
             ></Form.Check>
             <Form.Check
               inline
@@ -136,7 +155,9 @@ const EditarProducto = (props) => {
               name="categoria"
               value="carroceria"
               onChange={cambiarCategoria}
-              defaultChecked={producto.categoria && producto.categoria === 'carroceria'}
+              defaultChecked={
+                producto.categoria && producto.categoria === "carroceria"
+              }
             ></Form.Check>
           </div>
           <Button variant="danger w-100" type="submit">
