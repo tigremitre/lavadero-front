@@ -32,7 +32,7 @@ const Formulario = () => {
           },
           body: datos,
         };
-        let url = 'mongodb://localhost:27017/lavadero'
+        let url = 'http://localhost:4000/api/lavadero'
         const respuesta = await fetch(url, parametros);
         console.log(respuesta);
         if ((await respuesta.status) === 201) {
